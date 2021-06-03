@@ -1,0 +1,103 @@
+plugins {
+    id 'java'
+}
+
+group 'com.webLoadTest'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testCompile group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+
+    testCompile 'org.testng:testng:6.1.1'
+
+    testCompile "com.aventstack:extentreports:4.0.9"
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+
+    compile group: 'com.google.api-client', name: 'google-api-client', version: '1.27.0'
+
+    compile group: 'com.google.apis', name: 'google-api-services-sheets', version: 'v4-rev581-1.25.0'
+
+    compile group: 'com.google.oauth-client', name: 'google-oauth-client-jetty', version: '1.27.0'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.14.0'
+
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.14.0'
+
+    // https://mvnrepository.com/artifact/com.google.gdata/core
+    compile group: 'com.google.gdata', name: 'core', version: '1.47.1'
+
+    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive
+    compile group: 'com.google.apis', name: 'google-api-services-drive', version: 'v3-rev173-1.25.0'
+
+    compile 'com.google.apis:google-api-services-gmail:v1-rev105-1.25.0'
+
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.1'
+
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.7'
+
+    testCompile 'com.google.code.gson:gson:2.6.1'
+
+    testCompile 'org.json:json:20180130'
+
+    testCompile 'com.googlecode.json-simple:json-simple:1.1'
+
+    testCompile 'org.projectlombok:lombok:1.16.20'
+
+    testCompile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.7'
+
+    testCompile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+
+    compile group: 'net.lightbody.bmp', name: 'browsermob-core', version: '2.1.5'
+
+    // https://mvnrepository.com/artifact/de.sstoehr/har-reader
+    compile group: 'de.sstoehr', name: 'har-reader', version: '2.1.7'
+
+    // https://mvnrepository.com/artifact/edu.umass.cs.benchlab/harlib
+    compile group: 'edu.umass.cs.benchlab', name: 'harlib', version: '1.1.2'
+
+
+}
+
+
+test {
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
+
+    useTestNG() {
+
+        //print(suites)
+        //print(browserType)
+        //options.suites("/src/test/resources/testng.xml")
+
+        //options.suites("/src/test/resources/testSuites/v1/dev/Applicant-testng.xml")
+
+        options.suites("/src/test/resources/testSuites/$ver/$suites/$testType-testng.xml")
+
+        systemProperty "ver", ver
+        systemProperty "env",suites
+        systemProperty "browserType",System.getProperty("browserType")
+
+        //  systemProperty "url", url
+    }
+
+}

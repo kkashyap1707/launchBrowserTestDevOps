@@ -1,0 +1,12 @@
+https://startingwithseleniumwebdriver.blogspot.com/2019/10/using-browsermob-proxy-with-selenium.html
+https://shashikantjagtap.net/automating-web-performance-data-collection-with-behat-and-browsermob-proxy/
+https://www.automationeducator.in/2018/09/capture-performance-log-data-using.html?m=1
+https://techblog.dotdash.com/selenium-browsermob-integration-c35f4713fb59
+https://www.codota.com/code/java/methods/net.lightbody.bmp.BrowserMobProxy/stop
+https://www.seleniumeasy.com/selenium-tutorials/browsermob-proxy-selenium-example
+https://www.awesome-testing.com/2016/10/browsermob-proxy-selenium-network.html
+https://www.swtestacademy.com/webdriver-browsermob-proxy/
+
+
+API
+https://www.gridlastic.com/browsermob-proxy-example.html
